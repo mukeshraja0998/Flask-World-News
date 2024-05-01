@@ -4,11 +4,10 @@
 <head>
     <title>Tamil-Calendar</title>
     <link rel="icon" href="/static/img/mk.png" type="image/png" sizes="16x16">
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="title" content= "Tamil Calendar">
-    <meta name="description" content="calendar">
+    <meta name="title" content="Tamil Calendar">
+    <meta name="description" content="All News Available">
     <meta name="keywords" content="Tamil calendar">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -29,11 +28,8 @@
     <style>
         .card {
             margin: 0 auto;
-            /* Added */
             float: none;
-            /* Added */
             margin-bottom: 10px;
-            /* Added */
         }
     </style>
 
@@ -42,13 +38,11 @@
 <body style="background-image: linear-gradient(to right, rgb(107, 211, 162), rgb(107, 156, 211));">
     <nav class="navbar navbar-dark bg-dark navbar-expand-md">
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">&#x2630;</button> <a
-            class="navbar-brand" href="#">Tamil Calendar</a>
+            class="navbar-brand" href="/">Tamil Calendar</a>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active nav-item"><a href="#" class="nav-link">Home</a>
-                </li>
+                <li class="active nav-item"><a href="/" class="nav-link">Home</a>
             </ul>
-           
         </div>
     </nav>
 
@@ -56,37 +50,18 @@
         <div class="row">
 
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{ url_for('static', filename='img/daily.jpg') }}" alt="Monthly Image">
                 <div class="card-body">
-                    <h5 class="card-title">Today Calendar</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Today Calendar</h6>
-                    <p class="card-text">{{x}}</p>
-                    <a href="/today-calender" class="card-link">Click Here</a>
+                    <form action="/montly-calendar" method="POST">
+
+                    <h5 class="card-title">Select Month and Year</h5>
+                    <label for="calendar">Year-month:</label>
+                    <input type="month" id="start" placeholder="2023-11" name="monthYear" min="2022-01" max="2030-12" required />
+                    <br>
+                    <br>
+                    <button class="btn btn-primary" type="submit">submit</button>
+                </form>
                 </div>
             </div>
-
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{ url_for('static', filename='img/daily.jpg') }}" alt="Monthly Image">
-                <div class="card-body">
-                    <h5 class="card-title">Calendar all year</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">2005-2021</h6>
-                    <p class="card-text">Tamil Calendar 2005-2022</p>
-                    <a href="/all-calender" class="card-link">Click Here</a>
-                </div>
-            </div>
-
-
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{{ url_for('static', filename='img/monthly.jpg') }}" alt="Monthly Image">
-
-                <div class="card-body">
-                    <h5 class="card-title">Monthly Calendar</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">2005 to Current Year</h6>
-                    <p class="card-text">Tamil Monthly Calendar 2005-current Year</p>
-                    <a href="/montly-calendar" class="card-link">Click Here</a>
-                </div>
-            </div>
-
 
         </div>
     </div>
